@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		pages[i].addEventListener('click', function() {
 			clearInterval(switchSlideInterval);
 			switch_slide(this.innerHTML);
-			switchSlideInterval = setInterval(switch_slide, 3000, -1);
+			//switchSlideInterval = setInterval(switch_slide, 3000, -1);
 		});
 	};
 	switch_slide(1);
@@ -18,6 +18,7 @@ function switch_slide(slide_num) {
 		pages[j].classList.remove("active_slide");
 		document.getElementById("each_slide_wrapper_" + (j+1)).classList.add("hidden");
 		document.getElementById("each_slide_wrapper_" + (j+1)).classList.remove("active_sld");
+		document.getElementById("bottom_image2_" + (j+1)).classList.add("hidden");
 	};
 
 	//active this slide
@@ -29,6 +30,7 @@ function switch_slide(slide_num) {
 	currPage.classList.add("active_slide");
 	document.getElementById("each_slide_wrapper_" + currPage.innerHTML).classList.remove("hidden");
 	document.getElementById("each_slide_wrapper_" + currPage.innerHTML).classList.add("active_sld");
+	//document.getElementById("bottom_image2_" + currPage.innerHTML).classList.add("hidden");	//ko cần, vì trong phần CSS có phần animation thay đổi opacity rồi
 	currSlide++;
 	if(currSlide == 4) currSlide = 1;
 }

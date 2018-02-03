@@ -2,7 +2,9 @@ body {
 	margin: 0;
 }
 .slide_demo {
-	text-align: center;
+    position: absolute;
+    bottom: -3px;
+    left: 43%;
 }
 
 .slide_demo ul {
@@ -11,7 +13,7 @@ body {
 
 .slide_demo ul li {
 	display: inline-block;
-    border: 1px solid gray;
+    border: 1px solid #5495ff;
     width: 13px;
     height: 13px;
     border-radius: 50%;
@@ -21,11 +23,11 @@ body {
     cursor: pointer;
 }
 .slide_demo ul li:hover {
-	background: gray;
+	background: #5495ff;
 }
 
 .slide_demo ul li.active_slide {
-	background: gray;
+	background: #5495ff;
 }
 .hidden {
 	/*display: none;*/
@@ -39,7 +41,7 @@ body {
 
 /*CSS for slides*/
 html, body, .all_slides, .each_slide_wrapper, .each_slide {
-	height: 96%;
+	height: 100%;
 	transition: 0.4s;
 }
 .all_slides {
@@ -68,7 +70,7 @@ html, body, .all_slides, .each_slide_wrapper, .each_slide {
 .bottom_image2 {
     position: absolute;
 	top: -100px;
-	opacity: 0.6;
+	/*opacity: 0.6;*/
 	/*animation: bottom_img2 1s forwards;*/
 }
 .top_image1 {
@@ -82,12 +84,10 @@ html, body, .all_slides, .each_slide_wrapper, .each_slide {
 }
 .active_sld .each_slide .img2_wrapper .bottom_image2 {
 	animation: bottom_img2 1s forwards;
+	animation-delay: 0.4s;
 }
 .active_sld .each_slide .img3_wrapper .top_image1 {
 	animation: top_img1 1s forwards;
-}
-.active_sld .each_slide .texts {
-	animation: anim_texts 1s forwards;
 }
 
 @-webkit-keyframes bottom_img1 {
@@ -120,6 +120,20 @@ html, body, .all_slides, .each_slide_wrapper, .each_slide {
 		opacity: 0.8;
 	}
 }
+
+.active_sld .each_slide .texts h2,
+.active_sld .each_slide .texts h3,
+.active_sld .each_slide .texts .separator,
+.active_sld .each_slide .texts p,
+.active_sld .each_slide .texts .see_project_wrapper {
+	animation: anim_texts 1s forwards;
+}
+.active_sld .each_slide .texts h2 {animation-delay: 1s;}
+.active_sld .each_slide .texts h3 {animation-delay: 1.2s;}
+.active_sld .each_slide .texts .separator {animation-delay: 1.4s;}
+.active_sld .each_slide .texts p {animation-delay: 1.6s;}
+.active_sld .each_slide .texts .see_project_wrapper {animation-delay: 1.8s;}
+
 @-webkit-keyframes anim_texts {
 	from {
 		transform: translateX(-100%) translateY(0);
@@ -131,28 +145,36 @@ html, body, .all_slides, .each_slide_wrapper, .each_slide {
 	}
 }
 
+.texts h2 {
+	color: #fff;
+    font-size: 40px;
+    opacity: 0;
+}
+.texts h3 {
+	font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0;
+    color: yellow;
+}
+.texts .separator {
+	border: 1px solid #fff;
+	margin-top: 10px;
+    opacity: 0;
+}
+.texts p {
+	margin: 20px 0;
+	color: #fff;
+    opacity: 0;
+}
 .see_project {
 	color: #fff;
     border: 1px solid;
     padding: 5px 15px;
     text-decoration: none;
 }
-.texts h2 {
-	color: #fff;
-    font-size: 40px;
-}
-.texts small {
-	font-size: 25px;
-    font-weight: bold;
-    color: #fff;
-}
-.texts p {
-	margin: 20px 0;
-	color: #fff;
-}
-.texts .separator {
-	border: 1px solid #fff;
-	margin-top: 10px;
+.see_project_wrapper {
+    opacity: 0;
 }
 
 .heigh_zero {
